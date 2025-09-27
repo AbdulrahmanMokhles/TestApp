@@ -10,9 +10,9 @@ namespace TestApp.Domain.Interfaces
 {
     public interface IMacRepo : IGenericRepo<MacAddress>
     {
-        public Task<List<string>> GetMacAddressesListAsync();
+        public Task<HashSet<MacAddress>> GetMacAddressesListAsync(int pageNumber, int pageSize);
 
-        public Task<List<string>> AddMacAddress(AddMacAddressDto dto);
+        public Task<object> AddMacAddress(AddMacAddressDto dto);
 
 
     }

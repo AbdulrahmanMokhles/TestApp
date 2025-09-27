@@ -11,10 +11,10 @@ namespace TestApp.Controllers
     {
         private readonly IMacRepo _macAddressRepo=macRepo;
 
-        [HttpGet]
-        public async Task<IActionResult> GetAll()
+        [HttpGet("data-table")]
+        public async Task<IActionResult> GetAll(int pageNo , int pageSize)
         {
-            var result = await _macAddressRepo.GetMacAddressesListAsync();
+            var result = await _macAddressRepo.GetMacAddressesListAsync(pageNo,pageSize);
             return Ok(result);
         }
         [HttpPost]
